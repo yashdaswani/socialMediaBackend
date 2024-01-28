@@ -32,7 +32,7 @@ export const getComments = async (req, res) => {
       const newComment = new Comment({
         text: req.body.desc,
         createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-        userId: userInfo._id,
+        userId: userInfo.id,
         userName:userInfo.name,
         postId: req.body.postId,
       });

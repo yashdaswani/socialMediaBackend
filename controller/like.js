@@ -26,10 +26,11 @@ export const addLike = async (req, res) => {
     try {
       const userInfo = jwt.verify(token, process.env.JWT_TOKEN);
   
-      // Create a new Like document using the Mongoose model
+      // console.log(userInfo.id)
+      // console.log(req.query.postId)
       const newLike = new Like({
-        userId: userInfo._id,
-        postId: req.query.postId,
+        userId: userInfo.id,
+        postId: req.body.postId,
       });
   
       // Save the new like to the database
@@ -52,8 +53,8 @@ export const addLike = async (req, res) => {
   
       // Find the like document based on userId and postId
       const like = await Like.findOneAndDelete({
-        userId: userInfo._id,
-        postId: req.query.postId,
+        userId: userInfo.id,
+        postId: req.body.postId,
       });
   
       if (!like) {
