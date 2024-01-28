@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import cors from "cors";
-import userRoutes from "../backend/routes/users.js"
-import authRoutes from "../backend/routes/auth.js"
+import userRoutes from "./routes/users.js"
+import authRoutes from "./routes/auth.js"
 import postRoutes from "./routes/posts.js";
 import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
