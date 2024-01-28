@@ -13,7 +13,16 @@ import multer from "multer";
 const app = express();
 dotenv.config();
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", true);
+  res.setHeader('Access-Control-Allow-Origin', 'https://main--startling-genie-147c79.netlify.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
   next();
 });
 app.use(
