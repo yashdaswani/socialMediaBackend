@@ -12,10 +12,6 @@ import relationshipRoutes from "./routes/relationships.js"
 import multer from "multer";
 const app = express();
 dotenv.config();
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Credentials", true);
-    next();
-  });
 app.use(cors());
 app.use(cookieParser())
 app.use(express.json())
