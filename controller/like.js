@@ -28,8 +28,8 @@ export const addLike = async (req, res) => {
   
       // Create a new Like document using the Mongoose model
       const newLike = new Like({
-        userId: userInfo.id,
-        postId: req.body.postId,
+        userId: userInfo._id,
+        postId: req.query.postId,
       });
   
       // Save the new like to the database
@@ -52,7 +52,7 @@ export const addLike = async (req, res) => {
   
       // Find the like document based on userId and postId
       const like = await Like.findOneAndDelete({
-        userId: userInfo.id,
+        userId: userInfo._id,
         postId: req.query.postId,
       });
   
