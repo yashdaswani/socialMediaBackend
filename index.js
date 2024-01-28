@@ -15,11 +15,12 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://main--startling-genie-147c79.netlify.app'],
-  methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  allowedHeaders: 'Content-Type, Authorization',
+  origin: ['http://localhost:3000'],
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+
 
 app.use(cookieParser());
 app.use(express.json());
