@@ -54,7 +54,7 @@ export const addLike = async (req, res) => {
       // Find the like document based on userId and postId
       const like = await Like.findOneAndDelete({
         userId: userInfo.id,
-        postId: req.body.postId,
+        postId: req.query.postId,
       });
   
       if (!like) {
