@@ -15,7 +15,7 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://yash-social.netlify.app",
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
