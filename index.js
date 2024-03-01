@@ -15,11 +15,12 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-  origin: "*",
+  origin: "https://merry-treacle-1e6cee.netlify.app",
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+
 
 app.use(cookieParser());
 app.use(express.json());
